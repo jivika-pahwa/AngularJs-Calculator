@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <h1 style="text-align:center;color:salmon">Calculator Application</h1>
+    <h2 style="text-align:center;color:blue">using AngularJs</h2>
+  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <center>
+  <body ng-app="myApp" ng-controller="myCtrl" style="background-color:whitesmoke">
+
+      <label>Enter First Input : </label>
+      <input type="number" ng-model="firstInput" value="" placeholder="enter first number" />
+
+    <br><br>
+
+          <label>Enter Second Input : </label>
+          <input type="number" ng-model="secondInput" value="" placeholder="enter second number"/>
+      <br><br>
+      <button type="button" ng-click="add()">ADD</button>
+      <button type="button" ng-click="sub()">SUB</button>
+      <button type="button" ng-click="mul()">MUL</button>
+      <button type="button" ng-click="div()">DIV</button>
+      <br><br>
+    <div  style="background-color:lightblue;height:20px; text-align:center; width:200px;">
+      <label>Calculated Result : </label> {{result}}
+    </div>
+
+  </body>
+</center>
+  <script type="text/javascript">
+  var app = angular.module('myApp',[]);
+  app.controller('myCtrl',function($scope){
+    $scope.result = 0;
+      $scope.add = ()=>{
+        $scope.result = $scope.firstInput + $scope.secondInput;
+      }
+      $scope.sub = () => {
+        $scope.result = $scope.firstInput - $scope.secondInput;
+      }
+      $scope.mul = () => {
+        $scope.result = $scope.firstInput * $scope.secondInput;
+      }
+      $scope.div = () => {
+        $scope.result = $scope.firstInput / $scope.secondInput;
+      }
+  });
+
+  </script>
+
+</html>
